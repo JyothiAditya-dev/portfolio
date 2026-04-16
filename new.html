@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Jyothi Aditya | Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {margin:0;padding:0;box-sizing:border-box;}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background:#020617;
+  color:white;
+  scroll-behavior:smooth;
+}
+
+/* NAV */
+nav {
+  position:fixed;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  padding:20px 50px;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+nav a {
+  margin-left:20px;
+  text-decoration:none;
+  color:white;
+}
+
+nav a:hover {color:#22c55e;}
+
+/* HERO */
+.hero {
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.profile {
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  border:3px solid #22c55e;
+  box-shadow:0 0 25px #22c55e;
+  margin-bottom:20px;
+}
+
+h1 {font-size:40px;}
+.highlight {color:#22c55e;}
+
+.hero p {margin:10px 0;}
+
+.btn {
+  margin:10px;
+  padding:12px 25px;
+  border-radius:25px;
+  border:2px solid #22c55e;
+  background:transparent;
+  color:#22c55e;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn:hover {
+  background:#22c55e;
+  color:black;
+}
+
+/* SECTIONS */
+section {padding:80px 50px;}
+
+.container {
+  border:1px solid #22c55e;
+  border-radius:15px;
+  padding:30px;
+  margin-top:20px;
+}
+
+h2 {color:#22c55e;margin-bottom:20px;}
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card {
+  border:1px solid #22c55e;
+  padding:20px;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.card:hover {
+  transform:translateY(-10px);
+  box-shadow:0 0 15px #22c55e;
+}
+
+ul {
+  margin-top:10px;
+  padding-left:20px;
+}
+
+footer {
+  text-align:center;
+  padding:20px;
+  background:black;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <h3>Aditya</h3>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <img src="profile.jpg" class="profile">
+  <h1>Hi, I'm <span class="highlight">Jyothi Aditya</span></h1>
+  <p>AI/ML Engineer | Python Developer | Future Data Engineer</p>
+
+  <!-- FIXED BUTTONS -->
+  <button class="btn" onclick="scrollToAbout()">Explore My Work</button>
+
+  <a href="https://www.linkedin.com/in/jyothiaditya" target="_blank">
+    <button class="btn">LinkedIn</button>
+  </a>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>About Me</h2>
+<div class="container">
+<p>I am a B.Tech student specializing in Computer Science with Artificial Intelligence and Machine Learning, with a strong foundation in programming and intelligent systems.</p>
+
+<p>I have hands-on experience in building AI-based applications including food recognition systems, multilingual captioning, and secure computation projects.</p>
+
+<p>During my internship at DRDL Hyderabad, I worked on homomorphic encryption using Microsoft SEAL, performing computations on encrypted data.</p>
+
+<p>I am passionate about AI engineering, data engineering, and developing scalable real-world solutions.</p>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<h2>Skills</h2>
+<div class="container grid">
+<div class="card"><h3>Programming</h3><p>Python, Java</p></div>
+<div class="card"><h3>AI & ML</h3><p>Machine Learning, NLP, Computer Vision</p></div>
+<div class="card"><h3>Web</h3><p>HTML, CSS, JavaScript</p></div>
+<div class="card"><h3>Tools</h3><p>Git, Jupyter, Microsoft SEAL</p></div>
+</div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+<h2>Experience</h2>
+<div class="container">
+<div class="card">
+<h3>AI/ML Intern - DRDL Hyderabad</h3>
+<p><b>Duration:</b> May 2025 – July 2025</p>
+
+<p>Worked on secure computation using homomorphic encryption.</p>
+
+<ul>
+<li>Implemented encrypted data operations using Microsoft SEAL</li>
+<li>Applied privacy-preserving techniques</li>
+<li>Strengthened knowledge in data security</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<h2>Projects</h2>
+<div class="container grid">
+
+<div class="card">
+<h3>AI Nutrition Analyzer</h3>
+<p>Developed an AI system to detect food items and estimate calories.</p>
+<ul>
+<li>Used Python and ML models</li>
+<li>Processed image data</li>
+<li>Health-focused application</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Multilingual Image Captioning</h3>
+<p>Generated captions and translated them into multiple languages.</p>
+<ul>
+<li>Deep learning + NLP</li>
+<li>Multi-language output</li>
+<li>Real-time use case</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Secure Computation</h3>
+<p>Performed encrypted computations using Microsoft SEAL.</p>
+<ul>
+<li>Homomorphic encryption</li>
+<li>Secure AI processing</li>
+<li>Privacy-focused system</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+<h2>Certifications</h2>
+<div class="container grid">
+<div class="card">Python Essentials - Cisco</div>
+<div class="card">Cybersecurity Essentials</div>
+<div class="card">Introduction to IoT</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact</h2>
+<div class="container">
+<p>Email: adityajalli07@gmail.com</p>
+<p>Phone: 9390212014</p>
+<p>
+LinkedIn: 
+<a href="https://www.linkedin.com/in/jyothiaditya" target="_blank">
+linkedin.com/in/jyothiaditya
+</a>
+</p>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Jyothi Aditya</p>
+</footer>
+
+<!-- SCRIPT -->
+<script>
+function scrollToAbout() {
+  document.getElementById("about").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+</script>
+
+</body>
+</html>
