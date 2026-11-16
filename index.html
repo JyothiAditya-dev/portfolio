@@ -108,7 +108,7 @@ nav.scrolled{padding:12px 5%;background:rgba(2,6,23,.92);}
 }
 .nav-links a:hover,.nav-links a.active{color:var(--green);}
 .nav-links a:hover::after,.nav-links a.active::after{width:100%;}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:transparent;border:0;}
 .hamburger span{display:block;width:24px;height:1.5px;background:var(--green);transition:.3s;}
 
 /* ── BACK TO TOP ── */
@@ -629,6 +629,7 @@ footer span{color:var(--green);}
     transition:right .4s ease;z-index:999;
     border-left:1px solid var(--glass-border);
   }
+  .nav-links:not(.open){visibility:hidden;}
   .nav-links.open{right:0;}
   .nav-links a{font-size:.9rem;}
   #about .about-grid,#contact .contact-grid{grid-template-columns:1fr;}
@@ -682,9 +683,9 @@ footer span{color:var(--green);}
     <li><a href="#certifications">Certs</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <div class="hamburger" id="hamburger" onclick="toggleNav()">
+  <button type="button" class="hamburger" id="hamburger" aria-label="Navigation menu" aria-controls="navLinks" aria-expanded="false">
     <span></span><span></span><span></span>
-  </div>
+  </button>
 </nav>
 
 <!-- BACK TO TOP -->
@@ -1252,11 +1253,21 @@ window.addEventListener('scroll',()=>{
 });
 
 /* ── HAMBURGER ── */
-function toggleNav(){
-  document.getElementById('navLinks').classList.toggle('open');
+const navMenu = document.getElementById('navLinks');
+const navToggle = document.getElementById('hamburger');
+function setNavOpen(open){
+  navMenu.classList.toggle('open', open);
+  navToggle.setAttribute('aria-expanded', String(open));
 }
-document.getElementById('navLinks').querySelectorAll('a').forEach(a=>{
-  a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'));
+navToggle.addEventListener('click',()=>setNavOpen(!navMenu.classList.contains('open')));
+navMenu.querySelectorAll('a').forEach(link=>{
+  link.addEventListener('click',()=>setNavOpen(false));
+});
+document.addEventListener('keydown',event=>{
+  if(event.key==='Escape' && navMenu.classList.contains('open')){
+    setNavOpen(false);
+    navToggle.focus();
+  }
 });
 
 /* ── INTERSECTION OBSERVER ── */
